@@ -1,6 +1,6 @@
 [project]
 name = "simple-file-age-retention"
-version = "0.1.1"
+version = "0.1.2"
 description = "Removes aged files from a directory with optional dry-run and reporting"
 requires-python = ">=3.10"
 dependencies = []
