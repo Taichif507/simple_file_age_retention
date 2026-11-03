@@ -30,3 +30,10 @@ Log and cache directories accumulate files. Cron jobs that delete "old" files us
 ## Edge you will hit
 
 If a file cannot be removed (permissions, locks), it is recorded in `result.errors` and the run continues. The file is **not** added to `deleted`. Check `errors` if you need to know cleanup was incomplete.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
